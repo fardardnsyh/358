@@ -1,0 +1,8 @@
+RewriteEngine on
+RewriteCond %{HTTPS} off
+
+RewriteCond %{HTTP_HOST} ^utsanjan.netlify.app$
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteCond %{HTTP_HOST} ^utsanjan.netlify.app$ [NC]
+RewriteRule (.*) https://utsanjan.netlify.app/$1 [R=301,L]
